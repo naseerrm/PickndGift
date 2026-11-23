@@ -205,10 +205,20 @@
     // Convert a product name to its default media-folder name.
     // Example: "Remote Control Car" -> "remote-control-car".
     function productFolderName(product) {
-      const folder = product.imageFolder || product.mediaFolder || product.name || "";
-      return String(folder).toLowerCase().trim()
-        .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-    }
+  // Preserve the exact folder name from products.json
+  if (product.imageFolder || product.mediaFolder) {
+    return String(product.imageFolder || product.mediaFolder)
+      .trim()
+      .replace(/^\/+|\/+$/g, "");
+  }
+
+  // Generate a lowercase folder name when imageFolder is not provided
+  return String(product.name || "")
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
 
     // GitHub Pages is static hosting and cannot list a folder's contents.
     // So we probe a predictable sequence: 1.jpg, 2.jpg, 3.jpg ...
@@ -332,7 +342,7 @@
       const images = productImages(product);
       const imageIndex = (imagePositions.get(product.id) || 0) % Math.max(images.length, 1);
       const currentImage = images[imageIndex];
-      const imageSrc = currentImage?.src || "images/placeholder.svg";
+      const imageSrc = currentImage?.src || "images/no-image.png";
       const inStock = product.stock === true;
       const stockLabel = inStock ? "In stock" : "Out of stock";
       card.innerHTML = `
