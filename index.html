@@ -202,9 +202,84 @@
       if (/^(https?:|data:|blob:)/i.test(path)) return path;
       return path.replace(/^\.?\//, "");
     }
+    // Convert a product name to its default media-folder name.
+    // Example: "Remote Control Car" -> "remote-control-car".
+    function productFolderName(product) {
+      const folder = product.imageFolder || product.mediaFolder || product.name || "";
+      return String(folder).toLowerCase().trim()
+        .replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+
+    // GitHub Pages is static hosting and cannot list a folder's contents.
+    // So we probe a predictable sequence: 1.jpg, 2.jpg, 3.jpg ...
+    // Supported extensions are tried for each number.
+    function imageExists(url) {
+      return new Promise(resolve => {
+        const image = new Image();
+        image.onload = () => resolve(true);
+        image.onerror = () => resolve(false);
+        image.src = url;
+      });
+    }
+
+    async function discoverProductImages(product) {
+      // An explicitly supplied images array always takes priority.
+      if (Array.isArray(product.images) && product.images.length) {
+        return product.images.map(resolveMediaPath).filter(Boolean);
+      }
+
+      const folder = productFolderName(product);
+      if (!folder) return [];
+
+      const extensions = ["jpg", "jpeg", "png", "webp", "gif"];
+      const found = [];
+      const maxImages = 12;
+
+      for (let number = 1; number <= maxImages; number++) {
+        const candidates = extensions.map(ext => `images/${folder}/${number}.${ext}`);
+        const checks = await Promise.all(candidates.map(async path =>
+          await imageExists(path) ? path : null
+        ));
+        const match = checks.find(Boolean);
+        // Keep filenames sequential: 1.jpg, 2.png, 3.webp, etc.
+        if (!match) break;
+        found.push(match);
+      }
+      return found;
+    }
+
+    async function discoverProductVideos(product) {
+      // Optional automatic video convention: videos/<product-folder>/1.mp4, 2.mp4...
+      if (Array.isArray(product.videos) && product.videos.length) {
+        return product.videos.map(resolveMediaPath).filter(Boolean);
+      }
+      const folder = productFolderName(product);
+      if (!folder) return [];
+      const extensions = ["mp4", "webm", "ogg"];
+      const found = [];
+      for (let number = 1; number <= 5; number++) {
+        let match = null;
+        for (const ext of extensions) {
+          const path = `videos/${folder}/${number}.${ext}`;
+          try {
+            const response = await fetch(path, { method: "HEAD", cache: "no-cache" });
+            if (response.ok) { match = path; break; }
+          } catch (_) { /* Continue checking supported video extensions. */ }
+        }
+        if (!match) break;
+        found.push(match);
+      }
+      return found;
+    }
+
     function productMedia(product) {
-      const images = (product.images || []).map(src => ({ type: "image", src: resolveMediaPath(src) }));
-      const videos = (product.videos || []).map(src => ({ type: "video", src: resolveMediaPath(src) }));
+      const imageSources = Array.isArray(product.images) && product.images.length
+        ? product.images
+        : (product._autoImages || []);
+      const images = imageSources.map(src => ({ type: "image", src: resolveMediaPath(src) }));
+      const videoSources = Array.isArray(product.videos) && product.videos.length
+        ? product.videos : (product._autoVideos || []);
+      const videos = videoSources.map(src => ({ type: "video", src: resolveMediaPath(src) }));
       const links = (product.videoLinks || []).map(item => ({
         type: "link", src: item.url, label: item.label || "Watch video"
       }));
@@ -400,6 +475,18 @@
         const catalog = await response.json();
         storeSettings = { ...storeSettings, ...(catalog.store || {}) };
         products = Array.isArray(catalog.products) ? catalog.products : [];
+
+        // Automatically discover images from images/<product-name>/1.jpg, 2.jpg...
+        // This lets products.json omit the images array entirely.
+        await Promise.all(products.map(async product => {
+          const [images, videos] = await Promise.all([
+            discoverProductImages(product),
+            discoverProductVideos(product)
+          ]);
+          product._autoImages = images;
+          product._autoVideos = videos;
+        }));
+
         filteredProducts = [...products];
         document.title = catalog.store?.siteTitle || "PickndGift";
         const heading = document.querySelector(".brand h1");

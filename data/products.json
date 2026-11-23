@@ -14,11 +14,7 @@
       "category": "Lights",
       "price": 599,
       "stock": true,
-      "description": "📦 Package Contains: 1 x Starry Projector Night Light, Remote Control, User Manual (Multicolor)\\n\\n✨ Transform Your Space with a Mesmerizing Galaxy Effect\\n\\n🚀 360° Adjustable Design\\n\\n🎮 Remote Control & Timer Function\\n\\n🌟 Multiple Color Modes\\n\\n🎁 Perfect Gift for Kids & Space Lovers",
-      "images": [
-        "images/placeholder.svg"
-      ],
-      "videos": [],
+      "description": "📦 Package Contains: 1 x Starry Projector Night Light, Remote Control, User Manual (Multicolor)\n\n✨ Transform Your Space with a Mesmerizing Galaxy Effect\n\n🚀 360° Adjustable Design\n\n🎮 Remote Control & Timer Function\n\n🌟 Multiple Color Modes\n\n🎁 Perfect Gift for Kids & Space Lovers",
       "videoLinks": [
         {
           "url": "https://www.instagram.com/reel/C92_4Cmodzj/",
@@ -27,17 +23,13 @@
       ]
     },
     {
-      "id": "MZ S660 (PORTABLE BLUETOOTH SPEAKER) Dynamic Thunder Sound Wireless Mic RGB Light 5 W Bluetooth Speaker with Mic",
-      "name": "MZ S660 (PORTABLE BLUETOOTH SPEAKER) Dynamic Thunder Sound Wireless Mic RGB Light 5 W Bluetooth Speaker ",
+      "id": "mz-s660-portable-bluetooth-speaker",
+      "name": "MZ S660 Portable Bluetooth Speaker",
+      "imageFolder": "mz-s660-speaker",
       "category": "Electronic",
       "price": 750,
       "stock": true,
-      "description": "MZ S660 (PORTABLE BLUETOOTH SPEAKER) Dynamic Thunder Sound Wireless Mic RGB Light 5 W Bluetooth Speaker with Mic",
-      "images": [
-        "images/MzS660Speaker1.png"
-      ],
-      "videos": [],
-      "videoLinks": []
+      "description": "MZ S660 portable Bluetooth speaker with Dynamic Thunder Sound, wireless microphone, RGB light and 5 W audio output."
     },
     {
       "id": "dancing-robot",
@@ -45,12 +37,7 @@
       "category": "Electronic",
       "price": 499,
       "stock": false,
-      "description": "Musical dancing robot toy with lights.",
-      "images": [
-        "images/placeholder.svg"
-      ],
-      "videos": [],
-      "videoLinks": []
+      "description": "Musical dancing robot toy with lights."
     },
     {
       "id": "kids-train-set",
@@ -58,12 +45,7 @@
       "category": "Vehicles",
       "price": 399,
       "stock": true,
-      "description": "Battery operated train set.",
-      "images": [
-        "images/placeholder.svg"
-      ],
-      "videos": [],
-      "videoLinks": []
+      "description": "Battery operated train set."
     },
     {
       "id": "toy-blaster",
@@ -71,12 +53,7 @@
       "category": "Action Toys",
       "price": 249,
       "stock": false,
-      "description": "Toy blaster toy.",
-      "images": [
-        "images/placeholder.svg"
-      ],
-      "videos": [],
-      "videoLinks": []
+      "description": "Toy blaster toy."
     },
     {
       "id": "puzzle-game",
@@ -84,12 +61,7 @@
       "category": "Educational",
       "price": 129,
       "stock": true,
-      "description": "Educational puzzle game.",
-      "images": [
-        "images/placeholder.svg"
-      ],
-      "videos": [],
-      "videoLinks": []
+      "description": "Educational puzzle game."
     }
   ]
 }
