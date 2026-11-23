@@ -59,7 +59,7 @@
       "stock": true,
       "description": "Toy Imagine Rechargeable Karaoke Mic for Kids Wireless Bluetooth Mike for Singing, Practice Microphone for Kids, Music Singing Toy Birthday Gift for Boys & Girls 3+ (Assorted)"
     },
-     {
+    {
       "id": "torch-light",
       "name": "High Power Rechargable Torch",
       "category": "Lights",
@@ -67,6 +67,6 @@
       "price": 499,
       "stock": true,
       "description": "Ultra Bright LED, 150Min Power Backup, USB charging, Light weight and Portable"
-    },
+    }
   ]
 }
