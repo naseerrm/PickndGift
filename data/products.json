@@ -18,7 +18,7 @@
       "description": "📦 Package Contains: 1 x Starry Projector Night Light, Remote Control, User Manual (Multicolor)\n\n✨ Transform Your Space with a Mesmerizing Galaxy Effect\n\n🚀 360° Adjustable Design\n\n🎮 Remote Control & Timer Function\n\n🌟 Multiple Color Modes\n\n🎁 Perfect Gift for Kids & Space Lovers",
       "videoLinks": [
         {
-          "url": "https://www.instagram.com/reel/C92_4Cmodzj/",
+          "url": "https://instagram.com",
           "label": "Watch product video on Instagram"
         }
       ]
@@ -67,6 +67,15 @@
       "price": 499,
       "stock": true,
       "description": "Ultra Bright LED, 150Min Power Backup, USB charging, Light weight and Portable"
+    },
+    {
+      "id": "joystick-console-game",
+      "name": "Toy Imagine Retro Handheld Gaming Console for Kids",
+      "imageFolder": "Joystick-Console-Game",
+      "category": "Action Toys",
+      "price": 650,
+      "stock": true,
+      "description": "Retro Gaming Fun for All Ages: Relive the classics with this Toy Imagine handheld mini game console, featuring 520 games, including style adventures for kids and adults alike"
     }
   ]
 }
