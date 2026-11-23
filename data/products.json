@@ -37,7 +37,7 @@
       "name": "Mini RC Drifting Car",
       "category": "Action Toys",
       "imageFolder": "Mini-Remote-Car",
-      "price": 700,
+      "price": 699,
       "stock": true,
       "description": "SUPER TOY Remote Control Intelligent Sensor Drift Car for Kids – 4 Wheel Drive Mini RC Drifting Car with Follow Me, Escape Mode, Music & LED Light Toy Gifts for Boys Girls"
     },
@@ -46,7 +46,7 @@
       "name": "Wakie Talkie Phone Toy",
       "category": "Action Toys",
       "imageFolder": "Video-Call-WakiTaki",
-      "price": 1150,
+      "price": 1099,
       "stock": true,
       "description": "Wakie Talkie Phone Toy for 2-12 Years Rechargeable Talking Smart Phone Mobile Toy for Boys Girls Christmas Gift Birthday Surprise"
     },
@@ -55,18 +55,18 @@
       "name": "Karaoke Mic for Kids Wireless Bluetooth Mike for Singing",
       "category": "Action Toys",
       "imageFolder": "Mic-Speaker",
-      "price": 550,
+      "price": 499,
       "stock": true,
       "description": "Toy Imagine Rechargeable Karaoke Mic for Kids Wireless Bluetooth Mike for Singing, Practice Microphone for Kids, Music Singing Toy Birthday Gift for Boys & Girls 3+ (Assorted)"
     },
-    {
-      "id": "joystick-console-game",
-      "name": "Toy Imagine Retro Handheld Gaming Console for Kids",
-      "imageFolder": "Joystick-Console-Game",
-      "category": "Action Toys",
-      "price": 650,
+     {
+      "id": "torch-light",
+      "name": "High Power Rechargable Torch",
+      "category": "Lights",
+      "imageFolder": "torch-light",
+      "price": 499,
       "stock": true,
-      "description": "Retro Gaming Fun for All Ages: Relive the classics with this Toy Imagine handheld mini game console, featuring 520 games, including style adventures for kids and adults alike"
-    }
+      "description": "Ultra Bright LED, 150Min Power Backup, USB charging, Light weight and Portable"
+    },
   ]
 }
