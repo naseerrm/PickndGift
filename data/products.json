@@ -12,6 +12,7 @@
       "id": "space-projector-night-light",
       "name": "Space Projector Night Light",
       "category": "Lights",
+      "imageFolder": "Space-Projector-Night-Light",
       "price": 599,
       "stock": true,
       "description": "📦 Package Contains: 1 x Starry Projector Night Light, Remote Control, User Manual (Multicolor)\n\n✨ Transform Your Space with a Mesmerizing Galaxy Effect\n\n🚀 360° Adjustable Design\n\n🎮 Remote Control & Timer Function\n\n🌟 Multiple Color Modes\n\n🎁 Perfect Gift for Kids & Space Lovers",
@@ -35,6 +36,7 @@
       "id": "mini-remote-car",
       "name": "Mini RC Drifting Car",
       "category": "Action Toys",
+      "imageFolder": "Mini-Remote-Car",
       "price": 700,
       "stock": true,
       "description": "SUPER TOY Remote Control Intelligent Sensor Drift Car for Kids – 4 Wheel Drive Mini RC Drifting Car with Follow Me, Escape Mode, Music & LED Light Toy Gifts for Boys Girls"
@@ -43,6 +45,7 @@
       "id": "video-call-wakitaki",
       "name": "Wakie Talkie Phone Toy",
       "category": "Action Toys",
+      "imageFolder": "Video-Call-WakiTaki",
       "price": 1150,
       "stock": true,
       "description": "Wakie Talkie Phone Toy for 2-12 Years Rechargeable Talking Smart Phone Mobile Toy for Boys Girls Christmas Gift Birthday Surprise"
@@ -51,6 +54,7 @@
       "id": "mic-speaker",
       "name": "Karaoke Mic for Kids Wireless Bluetooth Mike for Singing",
       "category": "Action Toys",
+      "imageFolder": "Mic-Speaker",
       "price": 550,
       "stock": true,
       "description": "Toy Imagine Rechargeable Karaoke Mic for Kids Wireless Bluetooth Mike for Singing, Practice Microphone for Kids, Music Singing Toy Birthday Gift for Boys & Girls 3+ (Assorted)"
@@ -58,6 +62,7 @@
     {
       "id": "joystick-console-game",
       "name": "Toy Imagine Retro Handheld Gaming Console for Kids",
+      "imageFolder": "Joystick-Console-Game",
       "category": "Action Toys",
       "price": 650,
       "stock": true,
