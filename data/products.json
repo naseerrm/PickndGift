@@ -1,0 +1,95 @@
+{
+  "store": {
+    "siteTitle": "PickndGift | Toys and Gifts",
+    "storeName": "🧸 Pick and Gift Items",
+    "phone": "917812060516",
+    "tel": "+917812060516",
+    "currency": "₹",
+    "itemsPerPage": 8
+  },
+  "products": [
+    {
+      "id": "space-projector-night-light",
+      "name": "Space Projector Night Light",
+      "category": "Lights",
+      "price": 599,
+      "stock": true,
+      "description": "📦 Package Contains: 1 x Starry Projector Night Light, Remote Control, User Manual (Multicolor)\\n\\n✨ Transform Your Space with a Mesmerizing Galaxy Effect\\n\\n🚀 360° Adjustable Design\\n\\n🎮 Remote Control & Timer Function\\n\\n🌟 Multiple Color Modes\\n\\n🎁 Perfect Gift for Kids & Space Lovers",
+      "images": [
+        "images/placeholder.svg"
+      ],
+      "videos": [],
+      "videoLinks": [
+        {
+          "url": "https://www.instagram.com/reel/C92_4Cmodzj/",
+          "label": "Watch product video on Instagram"
+        }
+      ]
+    },
+    {
+      "id": "MZ S660 (PORTABLE BLUETOOTH SPEAKER) Dynamic Thunder Sound Wireless Mic RGB Light 5 W Bluetooth Speaker with Mic",
+      "name": "MZ S660 (PORTABLE BLUETOOTH SPEAKER) Dynamic Thunder Sound Wireless Mic RGB Light 5 W Bluetooth Speaker ",
+      "category": "Electronic",
+      "price": 750,
+      "stock": true,
+      "description": "MZ S660 (PORTABLE BLUETOOTH SPEAKER) Dynamic Thunder Sound Wireless Mic RGB Light 5 W Bluetooth Speaker with Mic",
+      "images": [
+        "images/MzS660Speaker1.png"
+      ],
+      "videos": [],
+      "videoLinks": []
+    },
+    {
+      "id": "dancing-robot",
+      "name": "Dancing Robot",
+      "category": "Electronic",
+      "price": 499,
+      "stock": false,
+      "description": "Musical dancing robot toy with lights.",
+      "images": [
+        "images/placeholder.svg"
+      ],
+      "videos": [],
+      "videoLinks": []
+    },
+    {
+      "id": "kids-train-set",
+      "name": "Kids Train Set",
+      "category": "Vehicles",
+      "price": 399,
+      "stock": true,
+      "description": "Battery operated train set.",
+      "images": [
+        "images/placeholder.svg"
+      ],
+      "videos": [],
+      "videoLinks": []
+    },
+    {
+      "id": "toy-blaster",
+      "name": "Toy Blaster",
+      "category": "Action Toys",
+      "price": 249,
+      "stock": false,
+      "description": "Toy blaster toy.",
+      "images": [
+        "images/placeholder.svg"
+      ],
+      "videos": [],
+      "videoLinks": []
+    },
+    {
+      "id": "puzzle-game",
+      "name": "Puzzle Game",
+      "category": "Educational",
+      "price": 129,
+      "stock": true,
+      "description": "Educational puzzle game.",
+      "images": [
+        "images/placeholder.svg"
+      ],
+      "videos": [],
+      "videoLinks": []
+    }
+  ]
+}
