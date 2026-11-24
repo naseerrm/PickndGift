@@ -392,6 +392,10 @@
       box-shadow: 0 8px 20px rgba(37, 211, 102, 0.45);
     }
 
+    .contact-text-short {
+      display: none;
+    }
+
     /* =========================
        HERO SHOWCASE SECTION
     ========================= */
@@ -508,10 +512,19 @@
       align-items: center;
       gap: 10px;
       overflow-x: auto;
-      padding-bottom: 6px;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 2px 8px;
       scrollbar-width: thin;
       scrollbar-color: #bfdbfe transparent;
-      overflow: visible;
+    }
+
+    .category-chips-wrap::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .category-chips-wrap::-webkit-scrollbar-thumb {
+      background: #bfdbfe;
+      border-radius: 4px;
     }
 
     .category-chip-btn {
@@ -842,8 +855,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 6px;
       margin-bottom: 6px;
+      flex-wrap: wrap;
     }
 
     .product-rating {
@@ -1379,9 +1393,11 @@
     /* =========================
        RESPONSIVE BREAKPOINTS
     ========================= */
+    /* 1. Large Tablets & Small Desktops (<= 1100px) */
     @media (max-width: 1100px) {
       .product-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
       }
 
       .toolbar {
@@ -1394,28 +1410,64 @@
 
       .trust-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
       }
     }
 
+    /* 2. Medium Tablets & Large Phones (<= 768px) */
     @media (max-width: 768px) {
+      .announcement-bar {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+        gap: 8px;
+      }
+
+      .site-header {
+        border-bottom-width: 1.5px;
+      }
+
       .header-inner {
-        padding: 14px 16px;
+        padding: 12px 16px;
+        gap: 12px;
+      }
+
+      .brand-wrap {
+        gap: 10px;
       }
 
       .brand-logo-img {
-        height: 44px;
+        height: 42px;
+        max-width: 110px;
+      }
+
+      .brand h1 {
+        font-size: 1.35rem;
       }
 
       .live-status {
         display: none;
       }
 
+      .hero-banner {
+        margin-top: 16px;
+        padding: 0 16px;
+      }
+
       .hero-card {
-        padding: 22px 18px;
+        padding: 24px 18px;
+      }
+
+      .hero-card h2 {
+        font-size: 1.65rem;
+      }
+
+      .hero-card p {
+        font-size: 0.92rem;
+        margin-bottom: 16px;
       }
 
       .main {
-        padding: 16px 14px 36px;
+        padding: 18px 16px 36px;
       }
 
       .toolbar {
@@ -1429,7 +1481,7 @@
       }
 
       .toolbar .apply-btn {
-        grid-column: 1 / -1;
+        grid-column: 2;
       }
 
       .product-grid {
@@ -1437,17 +1489,48 @@
         gap: 14px;
       }
 
+      /* Non-overlapping Card Badges in 2-Column Mobile/Tablet */
+      .stock-pill {
+        top: 8px;
+        left: 8px;
+        padding: 4px 8px;
+        font-size: 0.7rem;
+      }
+
+      .card-category-badge {
+        top: auto;
+        bottom: 8px;
+        left: 8px;
+        right: auto;
+        padding: 3px 8px;
+        font-size: 0.68rem;
+      }
+
+      .media-count {
+        bottom: 8px;
+        right: 8px;
+        padding: 2px 7px;
+        font-size: 0.68rem;
+      }
+
+      .media-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+      }
+
       .product-content {
-        padding: 14px;
+        padding: 14px 12px;
       }
 
       .product-content h3 {
-        font-size: 1rem;
+        font-size: 0.98rem;
         min-height: 2.6rem;
       }
 
       .price {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
+        padding: 4px 8px;
       }
 
       .card-actions {
@@ -1455,33 +1538,80 @@
         gap: 6px;
       }
 
+      .contact-btn {
+        padding: 9px 8px;
+        font-size: 0.84rem;
+      }
+
+      .details-btn {
+        padding: 8px;
+        font-size: 0.82rem;
+      }
+
+      /* Modal Mobile Optimization */
       .modal {
-        padding: 12px;
+        padding: 12px 10px;
+        align-items: flex-start;
       }
 
       .modal-panel {
-        padding: 18px;
+        margin: auto;
+        padding: 20px 16px;
         border-radius: 18px;
+        width: 100%;
+      }
+
+      .modal-close {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
       }
 
       .modal-layout {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
       }
 
       .modal-viewer {
-        min-height: 240px;
+        min-height: 220px;
       }
 
       .modal-viewer img,
       .modal-viewer video {
-        max-height: 44vh;
+        max-height: 40vh;
+      }
+
+      .modal-info h2 {
+        font-size: 1.3rem;
+        margin: 0 38px 8px 0;
+      }
+
+      .modal-info .price {
+        font-size: 1.5rem;
+      }
+
+      .modal-info .description {
+        padding: 12px;
+        font-size: 0.9rem;
+        margin: 12px 0 16px;
+      }
+
+      .modal-info .card-actions {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       .trust-grid {
         grid-template-columns: 1fr 1fr;
         gap: 12px;
         padding: 16px;
+      }
+
+      .floating-whatsapp {
+        bottom: 18px;
+        right: 18px;
       }
 
       .floating-whatsapp-tooltip {
@@ -1491,22 +1621,194 @@
       .floating-whatsapp-btn {
         width: 50px;
         height: 50px;
-        font-size: 28px;
+        font-size: 26px;
       }
     }
 
-    @media (max-width: 420px) {
+    /* 3. Standard Mobile Phones (<= 520px) */
+    @media (max-width: 520px) {
+      .announcement-bar {
+        font-size: 0.76rem;
+        padding: 6px 10px;
+      }
+
+      .header-inner {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+
+      .brand-wrap {
+        gap: 8px;
+      }
+
+      .brand-logo-img {
+        height: 38px;
+        max-width: 90px;
+      }
+
+      .brand h1 {
+        font-size: 1.2rem;
+      }
+
+      .brand p {
+        font-size: 0.72rem;
+      }
+
+      .contact-text-full {
+        display: none;
+      }
+
+      .contact-text-short {
+        display: inline;
+      }
+
+      .header-contact {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+        gap: 5px;
+      }
+
+      .hero-banner {
+        padding: 0 12px;
+        margin-top: 12px;
+      }
+
+      .hero-card {
+        padding: 18px 14px;
+        border-radius: 16px;
+      }
+
+      .hero-card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+      }
+
+      .hero-card p {
+        font-size: 0.86rem;
+        margin-bottom: 12px;
+        line-height: 1.4;
+      }
+
+      .hero-tag {
+        font-size: 0.72rem;
+        padding: 3px 8px;
+        margin-bottom: 6px;
+      }
+
+      .hero-perks {
+        gap: 6px;
+      }
+
+      .perk-chip {
+        font-size: 0.74rem;
+        padding: 4px 8px;
+      }
+
+      .main {
+        padding: 14px 12px 32px;
+      }
+
+      .category-chip-btn {
+        padding: 8px 14px;
+        font-size: 0.84rem;
+        gap: 6px;
+      }
+
+      /* Stack Toolbar Filters on Mobile */
+      .toolbar {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 8px;
+      }
+
+      .toolbar .search-wrap,
+      .toolbar select.field,
+      .toolbar .apply-btn {
+        grid-column: 1 / -1;
+        width: 100%;
+      }
+
+      .field {
+        padding: 10px 12px;
+        font-size: 0.88rem;
+      }
+
+      .btn {
+        padding: 10px 16px;
+        font-size: 0.88rem;
+      }
+
+      .results-row {
+        margin: 14px 2px 10px;
+        font-size: 0.82rem;
+      }
+
+      .result-badge {
+        font-size: 0.78rem;
+        padding: 4px 10px;
+      }
+
+      .btn.secondary {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+      }
+
+      /* 1-Column Feed on Phones */
       .product-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
 
       .product-content h3 {
+        font-size: 1.05rem;
         min-height: auto;
+      }
+
+      .card-actions {
+        grid-template-columns: 1.8fr 1fr;
+        gap: 8px;
       }
 
       .trust-grid {
         grid-template-columns: 1fr;
+        padding: 14px;
+        gap: 10px;
+      }
+
+      .site-footer {
+        padding: 24px 14px 36px;
+        font-size: 0.82rem;
+      }
+    }
+
+    /* 4. Extra-Small Mobile Screens (<= 360px) */
+    @media (max-width: 360px) {
+      .header-inner {
+        padding: 8px 10px;
+        gap: 6px;
+      }
+
+      .brand p {
+        display: none;
+      }
+
+      .brand h1 {
+        font-size: 1.08rem;
+      }
+
+      .brand-logo-img {
+        height: 32px;
+        max-width: 70px;
+      }
+
+      .header-contact {
+        padding: 6px 9px;
+        font-size: 0.74rem;
+      }
+
+      .card-actions {
+        grid-template-columns: 1fr;
+        gap: 6px;
       }
     }
 
@@ -1560,7 +1862,8 @@
           <span>Online • Quick Reply</span>
         </div>
         <a class="header-contact" href="https://wa.me/917812060516" target="_blank" rel="noopener">
-          <span>💬 Order on WhatsApp</span>
+          <span class="contact-text-full">💬 Order on WhatsApp</span>
+          <span class="contact-text-short">💬 WhatsApp</span>
         </a>
       </div>
     </div>
@@ -1725,7 +2028,7 @@
           "description": "📦 Package Contains: 1 x Starry Projector Night Light, Remote Control, User Manual (Multicolor)\n\n✨ Transform Your Space with a Mesmerizing Galaxy Effect\n\n🚀 360° Adjustable Design\n\n🎮 Remote Control & Timer Function\n\n🌟 Multiple Color Modes\n\n🎁 Perfect Gift for Kids & Space Lovers",
           "videoLinks": [
             {
-              "url": "https://instagram.com",
+              "url": "https://www.instagram.com/reel/Dbgd0lEycFT/?evlk=MmkwOGlkemUxYnRy",
               "label": "Watch product video on Instagram"
             }
           ]
@@ -1755,7 +2058,13 @@
           ],
           "price": 699,
           "stock": true,
-          "description": "SUPER TOY Remote Control Intelligent Sensor Drift Car for Kids – 4 Wheel Drive Mini RC Drifting Car with Follow Me, Escape Mode, Music & LED Light Toy Gifts for Boys Girls"
+          "description": "SUPER TOY Remote Control Intelligent Sensor Drift Car for Kids – 4 Wheel Drive Mini RC Drifting Car with Follow Me, Escape Mode, Music & LED Light Toy Gifts for Boys Girls",
+          "videoLinks": [
+            {
+              "url": "https://www.instagram.com/reel/DgHabSHSJA2/?evlk=c2MxYWNjb3BkM2I=",
+              "label": "Watch product video on Instagram"
+            }
+          ]
         },
         {
           "id": "video-call-wakitaki",
@@ -1832,6 +2141,19 @@
           "price": 350,
           "stock": true,
           "description": "Powerful and portable rechargeable headlamp, ideal for camping, hiking, trekking, cycling, and outdoor activities. Features a bright 300W LED,6–8 hours working time, adjustable lighting angle."
+        },
+        {
+          "id": "solar-camera-light",
+          "name": "Motion Sensor Security Cam Light",
+          "imageFolder": "solar-light",
+          "images": [
+            "images/solar-light/1.png",
+            "images/solar-light/2.png"
+          ],
+          "category": "Lights",
+          "price": 390,
+          "stock": true,
+          "description": "Solar Dummy CCTV Camera Light with PIR Motion Sensor & Remote Control. Designed with a realistic CCTV camera appearance, bright LED lights and PIR motion detection, it helps illuminate outdoor areas when movement is detected."
         }
       ]
     };
