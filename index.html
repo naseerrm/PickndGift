@@ -17,6 +17,111 @@
 
   <title>PickndGift</title>
   <style>
+
+/* =========================
+   PAGE LOADER
+========================= */
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff7ef, #ffffff);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+
+.page-loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  text-align: center;
+  padding: 25px;
+  animation: loaderAppear .6s ease;
+}
+
+.loader-logo {
+  font-size: 65px;
+  margin-bottom: 10px;
+  animation: teddyBounce 1.5s infinite ease-in-out;
+}
+
+.loader-content h2 {
+  margin: 0;
+  color: #ff6b00;
+  font-size: 30px;
+  font-weight: 850;
+  letter-spacing: -.8px;
+}
+
+.loader-content p {
+  color: #667085;
+  font-size: 14px;
+  margin: 10px 0 24px;
+}
+
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 15px;
+  border: 5px solid #ffe1cc;
+  border-top-color: #ff6b00;
+  border-radius: 50%;
+  animation: loaderSpin .8s linear infinite;
+}
+
+.loader-text {
+  color: #e85d00;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+@keyframes loaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes teddyBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes loaderAppear {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-logo,
+  .loader-spinner,
+  .loader-content {
+    animation: none;
+  }
+
+  .page-loader {
+    transition: none;
+  }
+}
+
     :root {
       --brand: #ff6b00; --brand-dark: #e85d00; --ink: #202124;
       --muted: #667085; --surface: #fff; --page: #f5f6f8;
@@ -131,6 +236,20 @@
   </style>
 </head>
 <body>
+
+  <!-- Page Loader -->
+<div id="pageLoader" class="page-loader">
+  <div class="loader-content">
+    <div class="loader-logo">🧸</div>
+    <h2>PickndGift</h2>
+    <p>Preparing something special for you...</p>
+
+    <div class="loader-spinner"></div>
+
+    <span class="loader-text">Loading products...</span>
+  </div>
+</div>
+
   <header class="site-header">
     <div class="header-inner">
       <div class="brand"><h1>🧸 Pick and Gift Items</h1><p>Fun, learning and little surprises for everyone</p></div>
@@ -488,6 +607,28 @@
       if (video) { video.pause(); video.removeAttribute("src"); video.load(); }
       activeProduct = null;
     }
+
+    // =========================
+// PAGE LOADER CONTROL
+// =========================
+
+function hidePageLoader() {
+  const loader = $("pageLoader");
+
+  if (!loader) return;
+
+  loader.classList.add("hide");
+
+  setTimeout(() => {
+    loader.remove();
+  }, 600);
+}
+
+// Prevent infinite loading
+const loaderTimeout = setTimeout(() => {
+  hidePageLoader();
+}, 15000);
+
     async function loadCatalog() {
       try {
         const response = await fetch("data/products.json", { cache: "no-cache" });
@@ -513,7 +654,12 @@
         if (heading && catalog.store?.storeName) heading.textContent = catalog.store.storeName;
         const contact = document.querySelector(".header-contact");
         if (contact && storeSettings.phone) contact.href = `https://wa.me/${String(storeSettings.phone).replace(/\D/g, "")}`;
-        buildCategoryOptions(); renderProducts();
+       buildCategoryOptions();
+renderProducts();
+
+// Hide loader after catalog and product images are processed
+clearTimeout(loaderTimeout);
+hidePageLoader();
       } catch (error) {
         console.error(error);
         productsEl.innerHTML = `<div class="empty-state"><strong>Unable to load products</strong><p>${escapeHTML(error.message)}. Open this website through GitHub Pages or a local web server, not directly as a file.</p></div>`;
