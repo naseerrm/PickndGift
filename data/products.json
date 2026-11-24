@@ -48,7 +48,13 @@
       "imageFolder": "Video-Call-WakiTaki",
       "price": 1099,
       "stock": true,
-      "description": "Wakie Talkie Phone Toy for 2-12 Years Rechargeable Talking Smart Phone Mobile Toy for Boys Girls Christmas Gift Birthday Surprise"
+      "description": "Wakie Talkie Phone Toy for 2-12 Years Rechargeable Talking Smart Phone Mobile Toy for Boys Girls Christmas Gift Birthday Surprise",
+      "videoLinks": [
+        {
+          "url": "https://www.instagram.com/p/DgFtnYZEsOe/?img_index=2&knvt=MWg0bjNkMThnNW1taw==",
+          "label": "Watch product video on Instagram"
+        }
+      ]
     },
     {
       "id": "mic-speaker",
@@ -76,6 +82,15 @@
       "price": 650,
       "stock": true,
       "description": "Retro Gaming Fun for All Ages: Relive the classics with this Toy Imagine handheld mini game console, featuring 520 games, including style adventures for kids and adults alike"
+    },
+    {
+      "id": "head-light-torch",
+      "name": "Rechargable HeadLight Torch",
+      "imageFolder": "head-torch-light",
+      "category": "torch-light",
+      "price": 350,
+      "stock": true,
+      "description": "Powerful and portable rechargeable headlamp, ideal for camping, hiking, trekking, cycling, and outdoor activities. Features a bright 300W LED,6–8 hours working time, adjustable lighting angle."
     }
   ]
 }
