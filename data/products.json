@@ -97,6 +97,15 @@
       "price": 350,
       "stock": true,
       "description": "Powerful and portable rechargeable headlamp, ideal for camping, hiking, trekking, cycling, and outdoor activities. Features a bright 300W LED,6–8 hours working time, adjustable lighting angle."
+    },
+    {
+      "id": "solar-camera-light",
+      "name": "Motion Sensor Security Cam Light",
+      "imageFolder": "solar-light",
+      "category": "Lights",
+      "price": 390,
+      "stock": true,
+      "description": "Solar Dummy CCTV Camera Light with PIR Motion Sensor & Remote Control. Designed with a realistic CCTV camera appearance, bright LED lights and PIR motion detection, it helps illuminate outdoor areas when movement is detected."
     }
   ]
 }
